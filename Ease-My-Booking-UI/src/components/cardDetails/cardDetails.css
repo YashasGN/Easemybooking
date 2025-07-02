@@ -1,0 +1,192 @@
+/* ====== GLOBAL RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* ====== MAIN CONTAINER ====== */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    min-height: 100vh;
+    flex-wrap: wrap;
+  }
+  
+  /* ====== IMAGE CARD ====== */
+  .image-card {
+    flex: 2;
+    max-width: 70%;
+    min-height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .concert-image, .museum-image, .zoo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* ====== DETAILS CARD ====== */
+  .details-card {
+    flex: 1;
+    max-width: 30%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 400px;
+  }
+  
+  /* ====== TITLES ====== */
+  .concert-title, .museum-title, .zoo-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #004d40;
+    text-align: center;
+  }
+  
+  /* ====== DETAILS LIST ====== */
+  .concert-details, .museum-details, .zoo-details {
+    list-style: none;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #00695c;
+    line-height: 1.8;
+  }
+  
+  /* ====== BUTTON ====== */
+  .buy-button {
+    padding: 14px 20px;
+    background: linear-gradient(to right, #00bfa5, #00796b);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .buy-button:hover {
+    background: linear-gradient(to right, #00796b, #004d40);
+  }
+  
+  /* ====== RESPONSIVE DESIGN ====== */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .image-card, .details-card {
+      flex: 1 1 100%;
+      width: 100%;
+      min-height: 250px;
+    }
+  
+    .details-card {
+      margin-top: 20px;
+    }
+  
+    .concert-title, .museum-title, .zoo-title {
+      font-size: 1.5rem;
+    }
+  
+    .concert-details, .museum-details, .zoo-details {
+      font-size: 1rem;
+    }
+  }
+  /* Rating styles */
+  .rate-button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rate-button:hover {
+    background-color: #e0a800;
+  }
+  
+
+
+/* Rating modal styles */
+.rating-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.rating-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.star-rating {
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+  margin: 0 5px;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.rating-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.rating-modal-actions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rating-modal-actions button:first-child {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+.rating-modal-actions button:last-child {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.rating-modal-actions button:last-child:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}

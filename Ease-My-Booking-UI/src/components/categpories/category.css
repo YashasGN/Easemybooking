@@ -1,0 +1,19 @@
+.category-btn {
+    border: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    min-width: 100px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .category-name {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  

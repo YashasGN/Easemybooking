@@ -1,0 +1,6 @@
+@EaseMyBookingGateway_HostAddress = http://localhost:5027
+
+GET {{EaseMyBookingGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

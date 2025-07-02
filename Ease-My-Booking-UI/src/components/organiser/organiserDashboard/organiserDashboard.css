@@ -1,0 +1,229 @@
+/* OrganiserDashboard.css - Optimized */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+.sidebar-subtext { font-size: 0.875rem; color: #e2e8f0; margin-bottom: 2.5rem; }
+
+.sidebar-button {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.sidebar-button.active, .sidebar-button:hover { background-color: rgba(255, 255, 255, 0.1); color: white; }
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  background-color: #f8fafc;
+  overflow-y: auto;
+}
+
+.header-with-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.place-actions-right { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.add-place-btn { background: #3b82f6; }
+.add-place-btn:hover { background: #2563eb; }
+.edit-btn { background: #f59e0b; }
+.edit-btn:hover { background: #d97706; }
+.delete-btn { background: #ef4444; }
+.delete-btn:hover { background: #dc2626; }
+
+/* Place List */
+.place-list-container { display: flex; flex-direction: column; gap: 1rem; }
+
+.place-row {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.place-row.selected { background-color: #eff6ff; border-left: 4px solid #3b82f6; }
+
+.place-content { display: flex; align-items: center; width: 100%; gap: 1.5rem; }
+.place-checkbox { margin-right: 1rem; width: 1.25rem; height: 1.25rem; accent-color: #3b82f6; cursor: pointer; flex-shrink: 0; }
+.place-info { flex: 1; min-width: 0; overflow: hidden; }
+.place-name { font-weight: 600; font-size: 1.05rem; color: #1e293b; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.place-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: #64748b; }
+.place-city, .place-category { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.place-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+
+.action-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.action-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* Status Colors */
+.place-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.place-status.open { background-color: #dcfce7; color: #16a34a; }
+.place-status.closed { background-color: #fee2e2; color: #dc2626; }
+
+.open-btn { background-color: #16a34a; color: white; }
+.open-btn:hover { background-color: #15803d; }
+.close-btn { background-color: #dc2626; color: white; }
+.close-btn:hover { background-color: #b91c1c; }
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+.close-button:hover { color: #64748b; }
+
+/* Confirmation Dialog */
+.confirmation-dialog {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  animation: fadeIn 0.2s ease-out;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.confirmation-dialog h3 { margin: 0 0 1rem 0; color: #1e293b; font-size: 1.25rem; font-weight: 600; }
+.confirmation-dialog p { margin: 0 0 1.5rem 0; color: #64748b; line-height: 1.5; }
+
+.dialog-actions { display: flex; justify-content: center; gap: 0.75rem; }
+.dialog-actions button {
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+.dialog-actions .confirm-btn { background-color: #16a34a; color: white; }
+.dialog-actions .confirm-btn:hover { background-color: #15803d; }
+.dialog-actions .confirm-btn.delete { background-color: #dc2626; }
+.dialog-actions .confirm-btn.delete:hover { background-color: #b91c1c; }
+.dialog-actions .cancel-btn { background-color: #f1f5f9; color: #64748b; }
+.dialog-actions .cancel-btn:hover { background-color: #e2e8f0; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-container { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: relative; }
+  .main-content { padding: 1.5rem; }
+}
+@media (max-width: 768px) {
+  .place-content { flex-wrap: wrap; }
+  .place-actions { width: 100%; justify-content: flex-end; margin-top: 1rem; }
+  .header-with-actions { flex-direction: column; align-items: flex-start; }
+  .modal-content { max-width: 90%; padding: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .action-btn { padding: 0.5rem; font-size: 0.75rem; }
+  .place-row { padding: 1rem; }
+  .form-actions { flex-direction: column; }
+  .cancel-btn, .submit-btn { width: 100%; }
+}

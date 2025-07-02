@@ -1,0 +1,103 @@
+{
+  "Routes": [
+
+    //Account Services
+    {
+      "UpstreamPathTemplate": "/gateway/Account/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DownstreamPathTemplate": "/api/Account/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7281
+        }
+      ]
+    },
+
+    // Places Service
+    {
+      "UpstreamPathTemplate": "/gateway/Places/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Places/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7215    
+        }
+
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Category/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Category/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7215
+        }
+
+      ]
+    },
+    //Booking_Services
+    {
+      "UpstreamPathTemplate": "/gateway/Price/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Price/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7257
+        }
+
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Slots/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Slots/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7257
+        }
+
+      ]
+    },
+    //Package Service
+    {
+      "UpstreamPathTemplate": "/gateway/Package/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Package/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5090
+        }
+
+      ]
+    },
+    //Transaction Service
+    {
+      "UpstreamPathTemplate": "/gateway/Transaction/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/Transaction/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7100
+        }
+
+      ]
+    
+
+}
+  ]
+}

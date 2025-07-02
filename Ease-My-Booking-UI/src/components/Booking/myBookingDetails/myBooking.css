@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@600&display=swap');
+
+body {
+  margin: 0;
+  background-color: #f2f4f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ticket-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.ticket-card {
+  display: flex;
+  width: 560px;
+  max-width: 95%;
+  min-height: 230px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  animation: fadeInUp 0.8s ease;
+}
+
+.ticket-card::before,
+.ticket-card::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background-color: #f2f4f8;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.ticket-card::before {
+  left: -14px;
+}
+
+.ticket-card::after {
+  right: -14px;
+}
+
+/* Left */
+.ticket-left {
+  width: 45%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 28px 22px;
+  border-right: 2px dashed rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+
+.ticket-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.ticket-detail {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Right */
+.ticket-right {
+  width: 55%;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.ticket-place {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.ticket-info {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.ticket-message {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+  color: #374151;
+}
+
+.ticket-qr {
+  width: 80px;
+  height: 80px;
+  margin-top: auto;
+  align-self: flex-start;
+  margin-top: 14px;
+}
+
+/* Button */
+.download-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
